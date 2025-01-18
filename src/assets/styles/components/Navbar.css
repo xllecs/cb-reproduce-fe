@@ -1,0 +1,33 @@
+.navbar-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+}
+
+.navbar-left, .navbar-right {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.navbar-left {
+  width: 15vw;
+  justify-content: space-between;
+}
+
+.navbar-left li {
+  cursor: pointer;
+}
+
+.navbar-right {
+  justify-content: space-between;
+  width: 3.5vw;
+}
+
+.navbar-icon {
+  cursor: pointer;
+  width: 1.5vw;
+}

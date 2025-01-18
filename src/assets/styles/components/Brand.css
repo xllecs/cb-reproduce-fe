@@ -1,0 +1,19 @@
+.brand-wrapper {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+}
+
+.brand-picture {
+  width: 50%;
+  height: 100%;
+  border: 1px solid red;
+  background-image: url('src/assets/pictures/the-brand.webp');
+  background-position: center;
+  background-size: cover;
+}
+
+.brand-desc {
+  width: 50%;
+  border: 1px solid red;
+}

@@ -1,0 +1,30 @@
+/* .product-view-wrapper {
+
+} */
+
+.product-view-content {
+  display: flex;
+}
+
+.product-view-content .left-side {
+  width: 50%;
+  overflow: hidden;
+  border: px solid red;
+}
+
+.product-view-content .right-side {
+  width: 50%;
+  position: relative;
+  border: 1px solid red;
+}
+
+.product-view-content .right-side-content {
+  top: 0;
+  /* left: 50%; */
+  /* transform: translateX(-50%); */
+  position: sticky;
+}
+
+.add-to-cart {
+  cursor: pointer;
+}

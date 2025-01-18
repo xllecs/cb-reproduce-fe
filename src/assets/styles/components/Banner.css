@@ -1,0 +1,19 @@
+.banner-header {
+  height: 100vh;
+  position: relative;
+  background-color: gray;
+}
+
+.banner-header-content {
+  position: absolute;
+  left: 50%;
+  bottom: 10%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.banner-products {
+  display: flex;
+}
