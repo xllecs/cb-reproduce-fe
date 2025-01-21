@@ -1,9 +1,3 @@
 .product-wrapper {
   cursor: pointer;
 }
-
-.product-picture {
-  height: 30vw;
-  width: 24.5vw;
-  background-color: pink;
-}

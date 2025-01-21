@@ -4,20 +4,15 @@ import { useGSAP } from "@gsap/react"
 import { useDispatch, useSelector } from "react-redux"
 import { closeCart } from "../../redux/cart"
 
-import { gql, useQuery } from "@apollo/client"
+import { useQuery } from "@apollo/client"
 
-import '../../assets/styles/components/cart/Cart.css'
 import CartItem from "./CartItem"
 
-const GET_CART_ITEMS = gql`
-  query {
-    cartItems {
-      productId
-      size
-      amount
-    }
-  }
-`
+import { GET_CART_ITEMS } from "../../graphql/queries"
+
+import '../../assets/styles/components/cart/Cart.css'
+
+import { updateAmount } from '../../redux/amount'
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart.value)
@@ -45,10 +40,17 @@ const Cart = () => {
     }
   }, {dependencies: [cart]})
 
-  const { loading, error, data } = useQuery(GET_CART_ITEMS)
+  const { loading, data } = useQuery(GET_CART_ITEMS)
 
   if (loading) return <p>Loading...</p>
-  // if (error) return <p>Error: </p>
+
+  let amount = 0
+
+  data['cartItems'].map(cartItem => {
+    amount += cartItem.amount
+  })
+
+  dispatch(updateAmount(amount))
 
   const onCloseCart = () => {
     dispatch(closeCart())
@@ -56,8 +58,10 @@ const Cart = () => {
 
   return (
     <div className="cart-wrapper">
-      <div onClick={onCloseCart}><img className="close-cart" src="src/assets/icons/close.png" /></div>
-      {data['cartItems'].map((cartItem, cartItemIndex) => <CartItem key={cartItemIndex} cartItemData={cartItem} />)}
+      <div onClick={onCloseCart} className="close-cart"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 21 21"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" d="m7.5 7.5l6 6m0-6l-6 6"/></svg></div>
+      {data['cartItems'].length > 0 ? data['cartItems'].map((cartItem, cartItemIndex) => <CartItem key={cartItemIndex} cartItemData={cartItem} />) :
+        <p>Your cart is empty</p>
+      }
     </div>
   )
 }

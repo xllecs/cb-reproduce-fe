@@ -1,4 +1,5 @@
 import { gql, useQuery } from '@apollo/client'
+import { Link } from 'react-router'
 
 import Product from './Product'
 
@@ -28,7 +29,7 @@ const Banner = ({ title }) => {
       <div className="banner-header">
         <div className="banner-header-content">
           <div className="banner-header-title">{title.toUpperCase()}</div>
-          <div className="banner-header-button">VIEW</div>
+          <Link to={`/collections/${title}`}><div className="banner-header-button">VIEW</div></Link>
         </div>
       </div>
       <div className="banner-products">

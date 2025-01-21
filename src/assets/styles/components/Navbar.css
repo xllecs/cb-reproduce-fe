@@ -2,7 +2,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: absolute;
   width: 100%;
 }
 
@@ -18,7 +17,7 @@
   justify-content: space-between;
 }
 
-.navbar-left li {
+.navbar-left, .navbar-right li {
   cursor: pointer;
 }
 
@@ -27,7 +26,26 @@
   width: 3.5vw;
 }
 
-.navbar-icon {
-  cursor: pointer;
-  width: 1.5vw;
+.navbar-right li {
+  position: relative;
+}
+
+.navbar-right li svg {
+  display: block;
+}
+
+.items-count {
+  position: absolute;
+  top: 1.3em;
+  right: .1em;
+  border-radius: 50%;
+  width: 1em;
+  height: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: black;
+  font-size: .8em;
+  padding: .1em
 }

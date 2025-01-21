@@ -1,16 +1,25 @@
 .cart-wrapper {
-  background-color: red;
+  background-color: white;
   height: 100vh;
   width: 23.5vw;
   position: absolute;
   top: 0;
   left: 100%;
+  border-left: .5px solid gray;
 }
 
 .close-cart {
-  width: 1.5vw;
+  /* width: 1.5vw; */
   position: absolute;
   top: 1vw;
   right: 1vw;
   cursor: pointer;
+}
+
+.close-cart svg {
+  display: block;
+  width: 2.5em;
+  height: 2.5em;
+  padding: 0;
+  margin: 0;
 }

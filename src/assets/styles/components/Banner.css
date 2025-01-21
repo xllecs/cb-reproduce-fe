@@ -2,6 +2,9 @@
   height: 100vh;
   position: relative;
   background-color: gray;
+  background-image: url('/images/footwear-banner.webp');
+  background-size: cover;
+  background-position: center;
 }
 
 .banner-header-content {

@@ -7,13 +7,22 @@
 .brand-picture {
   width: 50%;
   height: 100%;
-  border: 1px solid red;
-  background-image: url('src/assets/pictures/the-brand.webp');
+  background-image: url('/images/the-brand.webp');
   background-position: center;
   background-size: cover;
 }
 
-.brand-desc {
+.brand-right-side {
   width: 50%;
-  border: 1px solid red;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.brand-desc {
+  width: 80%;
+}
+
+.brand-desc p {
+  color: #404040;
 }

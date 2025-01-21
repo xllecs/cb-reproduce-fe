@@ -1,0 +1,11 @@
+.amount-wrapper {
+  display: flex;
+}
+
+.amount-button, .trash {
+  cursor: pointer;
+}
+
+.trash svg {
+  display: block;
+}

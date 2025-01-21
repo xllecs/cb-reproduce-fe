@@ -9,3 +9,8 @@ body {
   overflow-x: hidden;
   font-family: fraktion;
 }
+
+a {
+  text-decoration: none;
+  color: black;
+}
