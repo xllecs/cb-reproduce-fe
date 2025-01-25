@@ -1,11 +1,16 @@
-import { useState } from 'react'
-import { Link } from 'react-router'
+import { useContext, useState } from 'react'
+import { Link, Navigate, useNavigate } from 'react-router'
 
 import '../assets/styles/pages/Login.css'
+import { AuthContext } from '../context/AuthContext'
+import Dashboard from './Dashboard'
 
 const Login = () => {
+  const { login } = useContext(AuthContext)
+  const navigate = useNavigate()
+  const [error, setError] = useState('')
   const [formData, setFormData] = useState({
-    email: '',
+    username: '',
     password: '',
   })
 
@@ -14,22 +19,29 @@ const Login = () => {
     setFormData({...formData, [name]: value})
   }
   
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
+    try {
+      await login(formData.username, formData.password)
+      navigate('/account')
+    } catch (e) {
+      setError('Invalid username or password.')
+    }
   }
 
   return (
     <div className="login-wrapper">
       <div className="title">Login</div>
+      {error && <p>{error}</p>}
       <form onSubmit={handleSubmit}>
         <input
           type='text'
-          id='email'
-          name='email'
-          value={formData.email}
+          id='username'
+          name='username'
+          value={formData.username}
           onChange={handleChange}
           required
-          placeholder='Email' />
+          placeholder='Username' />
 
         <input
           type='password'

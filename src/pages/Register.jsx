@@ -1,15 +1,20 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 
 import '../assets/styles/pages/Register.css'
-import { Link } from "react-router"
+import { Link, useNavigate } from "react-router"
+import axios from "axios"
+import { AuthContext } from "../context/AuthContext"
 
 const Register = () => {
+  const { login } = useContext(AuthContext)
+  const navigate = useNavigate()
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
+    username: '',
     email: '',
     password: '',
+    password_confirm: ''
   })
+  const [message, setMessage] = useState('')
 
   const handleChange = (e) => {
     const {name, value} = e.target
@@ -19,33 +24,30 @@ const Register = () => {
     })
   }
 
-  const handleSubmit = (e) =>{
+  const handleSubmit = async (e) =>{
     e.preventDefault()
+    try {
+      const response = await axios.post('http://127.0.0.1:8000/api/register/', formData)
+      navigate('/account/login')
+    } catch (e) {
+      setMessage(e.response?.data?.error || 'Registration failed.')
+    }
   }
 
   return (
     <div className="register-wrapper">
       <div className="title">Create account</div>
 
+      {message && <p>{message}</p>}
       <form onSubmit={handleSubmit}>
         <input 
           type='text'
-          id='firstName'
-          name='firstName'
-          value={formData.firstName}
+          id='username'
+          name='username'
+          value={formData.username}
           onChange={handleChange}
           required
-          placeholder="First Name"
-        />
-
-        <input
-          type='text'
-          id='lastName'
-          name='lastName'
-          value={formData.lastName}
-          onChange={handleChange}
-          required
-          placeholder="Last Name"
+          placeholder="Username"
         />
 
         <input
@@ -66,6 +68,16 @@ const Register = () => {
           onChange={handleChange}
           required
           placeholder="Password"
+        />
+
+        <input
+          type='password'
+          id='passwordConfirm'
+          name='password_confirm'
+          value={formData.password_confirm}
+          onChange={handleChange}
+          required
+          placeholder="Confirm password"
         />
 
         <button type="submit">Create</button>

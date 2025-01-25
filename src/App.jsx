@@ -11,6 +11,7 @@ import Collections from './pages/Collections'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import Footer from './components/Footer'
+import Dashboard from './pages/Dashboard'
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           {/* <Route path="products/" element={<ProductView />} /> */}
           <Route path="products/:item" element={<ProductView />} />
           <Route path="collections/:item" element={<Collections />} />
+          <Route path="account/" element={<Dashboard />} />
           <Route path="account/login" element={<Login />} />
           <Route path="account/register" element={<Register />} />
         </Routes>

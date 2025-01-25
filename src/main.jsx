@@ -7,6 +7,7 @@ import App from './App.jsx'
 import { Provider } from 'react-redux'
 import store from './redux/store.js'
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client'
+import { AuthProvider } from './context/AuthContext.jsx'
 
 const client = new ApolloClient({
   uri: `${import.meta.env.VITE_DJANGO_BE}/graphql/`,
@@ -16,9 +17,11 @@ const client = new ApolloClient({
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <ApolloProvider client={client}>
-      <Provider store={store}>
-        <App />
-      </Provider>
+      <AuthProvider>
+        <Provider store={store}>
+          <App />
+        </Provider>
+      </AuthProvider>
     </ApolloProvider>
   </StrictMode>,
 )
