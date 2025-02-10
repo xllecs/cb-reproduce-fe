@@ -68,8 +68,10 @@ const Product = ({productData}) => {
           <div className="product-image-hover" ref={productImage} style={hoverImageStyling}></div>
         </div>
         <div className="product-details">
-          <div className="product-name">{productData.name}</div>
-          <div className="product-color">{productData.color}</div>
+          <div className="product-name-color">
+            <div className="product-name">{productData.name}</div>
+            <div className="product-color">{productData.color}</div>
+          </div>
           <div className="product-price">{productData.price}</div>
         </div>
       </div>

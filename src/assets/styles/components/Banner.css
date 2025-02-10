@@ -1,10 +1,14 @@
-.banner-header {
-  height: 100vh;
-  position: relative;
-  background-color: gray;
-  background-image: url('/images/footwear-banner.webp');
-  background-size: cover;
-  background-position: center;
+.banner-wrapper {
+  margin-bottom: 3em;
+}
+
+.banner-gradient {
+  width: 100%;
+  height: 30%;
+  background-image: linear-gradient(rgba(255, 0, 0, 0), black 150%);
+  position: absolute;
+  bottom: 0;
+  pointer-events: none;
 }
 
 .banner-header-content {
@@ -15,8 +19,24 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: white;
+}
+
+.banner-header-title {
+  font-size: 2em;
+  margin-bottom: .6em;
+}
+
+.banner-header-button {
+  color: white;
+  border: 1px solid white;
+  border-radius: .5em;
+  padding: .5em 3em;
 }
 
 .banner-products {
   display: flex;
+  gap: .5em;
+  margin: .5em .5em 0em .5em;
+  overflow-x: auto;
 }

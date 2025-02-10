@@ -1,3 +1,15 @@
 .product-wrapper {
   cursor: pointer;
 }
+
+.product-wrapper .product-details {
+  margin-top: 1em;
+  padding: 0 1em;
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-color {
+  color: #9B9B9B;
+  font-size: .7em;
+}

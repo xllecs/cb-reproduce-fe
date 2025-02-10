@@ -5,7 +5,3 @@
 .amount-button, .trash {
   cursor: pointer;
 }
-
-.trash svg {
-  display: block;
-}

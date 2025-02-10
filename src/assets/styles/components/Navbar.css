@@ -1,8 +1,15 @@
 .navbar-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar-content {
+  width: 95%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: .9em 0;
 }
 
 .navbar-left, .navbar-right {
@@ -10,28 +17,52 @@
   padding: 0;
   margin: 0;
   display: flex;
+  gap: 1.5em;
 }
 
 .navbar-left {
-  width: 15vw;
-  justify-content: space-between;
+  color: #404040;
 }
 
-.navbar-left, .navbar-right li {
+.shop-list {
+  list-style: none;
+  padding-top: .8em;
+  padding-left: .8em;
+  padding-bottom: .8em;
+  margin: 0;
+  width: 10em;
+  background-color: white;
+  position: absolute;
+  display: none;
+}
+
+.active-shop {
+  display: block;
+}
+
+.site-name {
+  font-size: 2em;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.navbar-left li, .navbar-right li {
   cursor: pointer;
 }
 
+.navbar-left li {
+  display: flex;
+  align-items: center;
+}
+
 .navbar-right {
-  justify-content: space-between;
-  width: 3.5vw;
+  position: absolute;
+  right: 0;
 }
 
 .navbar-right li {
   position: relative;
-}
-
-.navbar-right li svg {
-  display: block;
 }
 
 .items-count {

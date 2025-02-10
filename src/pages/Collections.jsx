@@ -2,10 +2,11 @@ import { gql, useQuery } from "@apollo/client"
 import Product from "../components/Product"
 
 import '../assets/styles/pages/Collections.css'
+import { useParams } from "react-router"
 
 const GET_PRODUCTS = gql`
-  query($category: String) {
-    products(category: $category) {
+  query($collection: String) {
+    products(collection: $collection) {
       id
       name
       color
@@ -15,7 +16,8 @@ const GET_PRODUCTS = gql`
 `
 
 const Collections = () => {
-  const { loading, data } = useQuery(GET_PRODUCTS)
+  const params = useParams()
+  const { loading, data } = useQuery(GET_PRODUCTS, {variables: { collection: params.item }})
 
   if (loading) return <p>Loading...</p>
 
