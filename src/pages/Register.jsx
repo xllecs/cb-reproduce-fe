@@ -1,9 +1,9 @@
 import { useContext, useState } from "react"
 
-import '../assets/styles/pages/Register.css'
 import { Link, useNavigate } from "react-router"
 import axios from "axios"
 import { AuthContext } from "../context/AuthContext"
+import Input from "../components/Input"
 
 const Register = () => {
   const { login } = useContext(AuthContext)
@@ -35,51 +35,15 @@ const Register = () => {
   }
 
   return (
-    <div className="register-wrapper">
+    <div className="authentication-wrapper">
       <div className="title">Create account</div>
 
       {message && <p>{message}</p>}
       <form onSubmit={handleSubmit}>
-        <input 
-          type='text'
-          id='username'
-          name='username'
-          value={formData.username}
-          onChange={handleChange}
-          required
-          placeholder="Username"
-        />
-
-        <input
-          type='email'
-          id='email'
-          name='email'
-          value={formData.email}
-          onChange={handleChange}
-          required
-          placeholder="Email"
-        />
-
-        <input
-          type='password'
-          id='password'
-          name='password'
-          value={formData.password}
-          onChange={handleChange}
-          required
-          placeholder="Password"
-        />
-
-        <input
-          type='password'
-          id='passwordConfirm'
-          name='password_confirm'
-          value={formData.password_confirm}
-          onChange={handleChange}
-          required
-          placeholder="Confirm password"
-        />
-
+        <Input type='text' id='username' placeholder='Username' />
+        <Input type='email' id='email' placeholder='Email' />
+        <Input type='password' id='password' placeholder='Password' />
+        <Input type='password' id='passwordConfirm' name='password_confirm' placeholder='Confirm password' />
         <button type="submit">Create</button>
       </form>
       <Link to={'/account/login'}>Sign into account</Link>

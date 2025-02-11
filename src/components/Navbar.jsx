@@ -20,12 +20,12 @@ const Navbar = () => {
       <div className="navbar-content">
         <ul className='navbar-left'>
           <li>NEW LAUNCHES</li>
-          <li onClick={() => setShopList(!shopList)}>SHOP <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M11 4.5v11.586l-4.5-4.5L5.086 13L12 19.914L18.914 13L17.5 11.586l-4.5 4.5V4.5h-2Z"/></svg>
+          <li onClick={() => setShopList(!shopList)}>SHOP <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 48 48"><path fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" d="M36 18L24 30L12 18"/></svg>
             <ul className={shopList ? 'active-shop shop-list' : 'shop-list'}>
               <li><Link to='collections/footwear'>FOOTWEAR</Link></li>
             </ul>
           </li>
-          <li>INFO <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M11 4.5v11.586l-4.5-4.5L5.086 13L12 19.914L18.914 13L17.5 11.586l-4.5 4.5V4.5h-2Z"/></svg>
+          <li>INFO <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 48 48"><path fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" d="M36 18L24 30L12 18"/></svg>
             {/* <ul>
               <li>THE BRAND</li>
             </ul> */}

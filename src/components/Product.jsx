@@ -6,9 +6,9 @@ import gsap from 'gsap'
 import { useRef } from 'react'
 
 const GET_IMAGE = gql`
-  query GetImage($productId: ID) {
-    productImages(productId: $productId) {
-      image
+  query GetImage($productCode: String) {
+    productImages(productCode: $productCode) {
+      url
     }
   }
 `
@@ -17,10 +17,10 @@ const Product = ({productData}) => {
   const productImage = useRef()
         
   const { loading, error, data } = useQuery(GET_IMAGE, {
-    variables: { productId: productData.id },
+    variables: { productCode: productData.code },
   })
 
-  const productViewUrl = `/products/${productData.name.toLowerCase().split(' ').join('-') + '-' + productData.color.toLowerCase().split(' ').join('-')}`
+  const productViewUrl = `/products/${productData.code}`
 
   if (loading) return <p>Loading...</p>
   if (error) return <p>Error: {error.message}</p>
@@ -29,7 +29,7 @@ const Product = ({productData}) => {
     {
       height: '30vw',
       width: '24.5vw',
-      backgroundImage: `url(${import.meta.env.VITE_DJANGO_MEDIA + data.productImages[0].image})`,
+      backgroundImage: `url(${import.meta.env.VITE_DJANGO_MEDIA + data.productImages[0].url})`,
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       position: 'relative'
@@ -39,7 +39,7 @@ const Product = ({productData}) => {
     {
       height: '100%',
       width: '100%',
-      backgroundImage: `url(${import.meta.env.VITE_DJANGO_MEDIA + data.productImages[1].image})`,
+      backgroundImage: `url(${import.meta.env.VITE_DJANGO_MEDIA + data.productImages[1].url})`,
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       position: 'absolute',

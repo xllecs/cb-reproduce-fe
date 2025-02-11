@@ -1,26 +1,19 @@
 .product-view-content {
   display: flex;
+  margin-bottom: .5em;
 }
 
 .product-view-content .product-images {
-  width: 50%;
   display: grid;
-  gap: .3em;
-  grid-template-rows: 1000px;
-  grid-template-columns: 1fr 1fr;
+  width: 50%;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 30vw;
+  gap: .5em;
 }
 
-.image {
-  cursor: pointer;
-  position: relative;
-}
-
-.image-1, .image-2, .image-3 {
-  background-color: gray;
-}
-
-.image-1 {
-  grid-column: 1 / 3;
+.product-images .image:first-child {
+  grid-column: span 2;
+  grid-row: span 2;
 }
 
 .product-images svg {
@@ -51,6 +44,21 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 1em;
+}
+
+.product-colors {
+  display: flex;
+  gap: .2em;
+}
+
+.product-colors .color {
+  cursor: pointer;
+  border-radius: .2em;
+}
+
+.current-color, .current-size {
+  color: #9B9B9B;
+  font-size: .7em;
 }
 
 .product-sizes {

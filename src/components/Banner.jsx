@@ -8,7 +8,7 @@ import '../assets/styles/components/Banner.css'
 const GET_PRODUCTS = gql`
   query GetProducts($collection: String) {
     products(collection: $collection) {
-      id
+      code
       name
       color
       price

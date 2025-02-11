@@ -10,9 +10,8 @@
 .footer-content {
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: center;
-  /* gap: 2em; */
+  gap: 2em;
 }
 
 .footer-wrapper .brand-text {
@@ -24,4 +23,42 @@
   gap: 2em;
   padding: 0;
   margin: 0;
+  justify-self: center;
+}
+
+.footer-email-text {
+  margin-bottom: .8em;
+}
+
+.footer-email-input {
+  width: 100%;
+  background-color: #ebebeb;
+  display: flex;
+  align-items: center;
+}
+
+.footer-email-input input {
+  background-color: transparent;
+  border: none;
+  height: 3.1em;
+  width: 100%;
+  padding-left: 1em;
+  font-size: 1em;
+  font-family: fraktion;
+}
+
+.footer-email-input input:focus {
+  outline: none;
+}
+
+
+.footer-email-input svg {
+  display: block;
+  padding: 1em;
+  cursor: pointer;
+}
+
+.pay-options {
+  display: flex;
+  gap: 1em;
 }

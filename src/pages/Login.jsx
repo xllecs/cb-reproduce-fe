@@ -1,9 +1,11 @@
 import { useContext, useState } from 'react'
-import { Link, Navigate, useNavigate } from 'react-router'
+import { Link, useNavigate } from 'react-router'
 
-import '../assets/styles/pages/Login.css'
 import { AuthContext } from '../context/AuthContext'
 import Dashboard from './Dashboard'
+import Input from '../components/Input'
+
+import '../assets/styles/pages/Authentication.css'
 
 const Login = () => {
   const { login } = useContext(AuthContext)
@@ -14,11 +16,6 @@ const Login = () => {
     password: '',
   })
 
-  const handleChange = (e) => {
-    const { name, value } = e.target
-    setFormData({...formData, [name]: value})
-  }
-  
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
@@ -30,28 +27,12 @@ const Login = () => {
   }
 
   return (
-    <div className="login-wrapper">
+    <div className="authentication-wrapper">
       <div className="title">Login</div>
       {error && <p>{error}</p>}
       <form onSubmit={handleSubmit}>
-        <input
-          type='text'
-          id='username'
-          name='username'
-          value={formData.username}
-          onChange={handleChange}
-          required
-          placeholder='Username' />
-
-        <input
-          type='password'
-          id='password'
-          name='password'
-          value={formData.password}
-          onChange={handleChange}
-          required
-          placeholder='Password' />
-
+        <Input type='text' id='username' placeholder='Username' />
+        <Input type='password' id='password' placeholder='Password' />
         <button type='submit'>Sign In</button>
       </form>
       <Link to={'/account/register'}>Create account</Link>

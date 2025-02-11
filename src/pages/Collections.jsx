@@ -7,7 +7,7 @@ import { useParams } from "react-router"
 const GET_PRODUCTS = gql`
   query($collection: String) {
     products(collection: $collection) {
-      id
+      code
       name
       color
       price

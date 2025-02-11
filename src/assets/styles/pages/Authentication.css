@@ -1,0 +1,31 @@
+.authentication-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 5em 0;
+  gap: 2em;
+}
+
+.authentication-wrapper .title {
+  font-size: 2.5em;
+}
+
+.authentication-wrapper form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  align-items: center;
+}
+
+.authentication-wrapper button {
+  border: none;
+  background-color: black;
+  color: white;
+  font-family: fraktion;
+  border-radius: .4em;
+  padding: .7em 4em;
+  cursor: pointer;
+  font-size: .8em;
+  margin-top: 2em;
+}
