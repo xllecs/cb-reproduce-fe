@@ -89,15 +89,19 @@ const ProductView = () => {
     )
   }
 
-  const showMagnifying = () => {
-    gsap.to(magnifyingRef.current, {
+  const showMagnifying = (e) => {
+    const image = e.currentTarget.querySelector('svg')
+
+    gsap.to(image, {
       opacity: 1,
       duration: .1
     })
   }
   
-  const hideMagnifying = () => {
-    gsap.to(magnifyingRef.current, {
+  const hideMagnifying = (e) => {
+    const image = e.currentTarget.querySelector('svg')
+
+    gsap.to(image, {
       opacity: 0,
       duration: .1
     })

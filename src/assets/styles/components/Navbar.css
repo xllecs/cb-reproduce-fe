@@ -2,6 +2,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  position: relative;
 }
 
 .navbar-content {
@@ -67,8 +68,8 @@
 
 .items-count {
   position: absolute;
-  top: 1.3em;
-  right: .1em;
+  bottom: 0;
+  right: 0;
   border-radius: 50%;
   width: 1em;
   height: 1em;

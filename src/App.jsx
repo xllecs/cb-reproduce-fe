@@ -16,20 +16,22 @@ import Dashboard from './pages/Dashboard'
 function App() {
   return (
     <div className="app-wrapper">
-      <Router>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          {/* <Route path="products/" element={<ProductView />} /> */}
-          <Route path="products/:code" element={<ProductView />} />
-          <Route path="collections/:item" element={<Collections />} />
-          <Route path="account/" element={<Dashboard />} />
-          <Route path="account/login" element={<Login />} />
-          <Route path="account/register" element={<Register />} />
-        </Routes>
-      </Router>
+      <div className="app-content">
+        <Router>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            {/* <Route path="products/" element={<ProductView />} /> */}
+            <Route path="products/:code" element={<ProductView />} />
+            <Route path="collections/:item" element={<Collections />} />
+            <Route path="account/" element={<Dashboard />} />
+            <Route path="account/login" element={<Login />} />
+            <Route path="account/register" element={<Register />} />
+          </Routes>
+        </Router>
+        <Footer />
+      </div>
       <Cart />
-      <Footer />
     </div>
   )
 }

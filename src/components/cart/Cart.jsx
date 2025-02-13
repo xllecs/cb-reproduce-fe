@@ -19,25 +19,14 @@ const Cart = () => {
   const dispatch = useDispatch()
 
   useGSAP(() => {
-    if (cart) {
-      gsap.set('body', {
-        overflowY: 'hidden',
-      })
+    gsap.set('body', {
+      overflowY: cart ? 'hidden' : 'auto',
+    })
 
-      gsap.to('.cart-wrapper', {
-        transform: 'translateX(-100%)',
-        duration: .2,
-      })
-    } else {
-      gsap.set('body', {
-        overflowY: 'auto',
-      })
-
-      gsap.to('.cart-wrapper', {
-        transform: 'translateX(0%)',
-        duration: .2,
-      })
-    }
+    gsap.to('.cart-wrapper', {
+      transform: cart ? 'translateX(-100%)' : 'translateX(0%)',
+      duration: .2,
+    })
   }, {dependencies: [cart]})
 
   const { loading, data } = useQuery(GET_CART_ITEMS)
