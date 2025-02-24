@@ -8,4 +8,6 @@ The project here represents the frontend part built with React and makes use of 
 - React Router to navigate across the app.
 - Apollo Client and GraphQL to execute queries and mutations such as fetching products, colors, sizes, adding products to the cart, updating the items in the cart, deleting items from the cart, etc.
 
+The app also benefits from login/register logic built using authentication tokens.
+
 **DISCLAIMER: THE PROJECT WAS BUILT ONLY FOR LEARNING PURPOSES AND IT IS NOT, UNDER ANY CIRCUMSTANCES, GOING TO BE USED FOR COMMERCIAL USE.**
